@@ -1,0 +1,197 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Check, Stethoscope } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { creditBenefits, features, testimonials } from "@/lib/data";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Pricing from "@/components/pricing";
+
+export default function Home() {
+  return (
+    <div className="bg-background text-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Badge
+                variant="outline"
+                className="bg-blue-900/30 border-blue-700/30 px-4 py-2 text-blue-400 text-sm font-medium"
+              >
+                MediConnect — Healing Made Easy
+              </Badge>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Bringing doctors
+                <br />
+                <span className="text-blue-400">closer to you</span>
+              </h1>
+
+              <p className="text-muted-foreground text-lg md:text-xl max-w-md">
+                Skip the waiting room — book appointments, talk to doctors face‑to‑face online, and keep track of your health, all from one secure, easy‑to‑use app.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+                  <Link href="/onboarding">
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+
+                <Button asChild size="lg" variant="outline" className="border-blue-700/30 hover:bg-muted/80">
+                  <Link href="/doctors">
+                    Find Doctors <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative w-full max-w-md lg:max-w-lg mx-auto h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-xl">
+              <Image
+                src="/photodoc.jpg"
+                alt="Doctor Consultation"
+                fill
+                priority
+                className="object-cover rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Whether it’s booking appointments, video consultations, or managing records — MediConnect brings everything together in one place.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <Card
+                key={idx}
+                className="transition-all hover:shadow-lg bg-background border border-muted rounded-xl"
+              >
+                <CardHeader className="flex items-center gap-4 pb-2">
+                  <div className="bg-blue-100 text-blue-700 p-3 rounded-full text-xl">
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consultation Packages */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="bg-blue-900/30 border-blue-700/30 px-4 py-1 text-blue-400 text-sm font-medium mb-4">
+              Affordable Healthcare
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">CONSULTATION PACKAGES</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Choose the perfect consultation package that fits your healthcare needs.
+            </p>
+          </div>
+
+          <Pricing />
+
+          <Card className="mt-12 bg-muted/20 border-blue-900/30">
+            <CardHeader>
+              <CardTitle className="text-xl font-semibold flex items-center">
+                <Stethoscope className="h-5 w-5 mr-2 text-blue-400" />
+                How Our Credit System Works
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {creditBenefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <div className="mr-3 mt-1 bg-blue-900/20 p-1 rounded-full flex justify-center items-center">
+                      <Check className="h-4 w-4 text-blue-400" />
+                    </div>
+                    <p
+                      className="text-muted-foreground"
+                      dangerouslySetInnerHTML={{ __html: benefit.replace(/emerald/g, "blue") }}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="bg-blue-900/30 border-blue-700/30 px-4 py-1 text-blue-400 text-sm font-medium mb-4">
+              Success Stories
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Users Say</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Hear from patients and doctors who use our platform.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((t, idx) => (
+              <Card key={idx} className="border-blue-900/20 hover:border-blue-800/40 transition-all">
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-900/20 flex items-center justify-center mr-4">
+                      <span className="text-blue-400 font-bold">{t.initials}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{t.name}</h4>
+                      <p className="text-sm text-muted-foreground">{t.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">&quot;{t.quote}&quot;</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gradient-to-r from-blue-900/30 to-blue-950/20 border-blue-800/20">
+            <CardContent className="relative overflow-hidden p-8 md:p-12 lg:p-16">
+              <div className="relative z-10 max-w-2xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to take control of your healthcare?</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Join thousands who’ve simplified their healthcare journey with MediConnect. Get started today!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+                    <Link href="/sign-up">Sign Up Now</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="border-blue-700/30 hover:bg-muted/80">
+                    <Link href="#pricing">View Pricing</Link>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="absolute right-0 top-0 w-[300px] h-[300px] bg-blue-800/10 rounded-full blur-3xl -mr-20 -mt-20" />
+              <div className="absolute left-0 bottom-0 w-[200px] h-[200px] bg-blue-700/10 rounded-full blur-3xl -ml-10 -mb-10" />
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </div>
+  );
+}
