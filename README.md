@@ -4,7 +4,7 @@ MediConnect is a full-stack medical appointment platform designed to streamline 
 
 ## 🔗 Live Demo
 
-**[Live Website](https://your-deployment-link.vercel.app)**  
+**[Live Website](https://medi-connect-eta.vercel.app/)**  
 *(Replace with actual URL if public)*
 
 ## 🚀 Features
