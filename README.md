@@ -1,122 +1,59 @@
-🏥 MediConnect – Doctor Appointment Platform
+# 🩺 MediConnect - Doctor Appointment Platform
 
-A full-stack medical appointment platform enabling patients to browse doctors by specialization, book consultations, and join secure video calls. Built with Next.js, Tailwind CSS, Prisma, Vonage, and Clerk, MediConnect offers a seamless healthcare experience from search to real-time consultation.
+MediConnect is a full-stack medical appointment platform designed to streamline the process of discovering doctors by specialization, booking consultations, and conducting video calls with real-time support and email notifications.
 
-🚀 Live Demo
+## 🔗 Live Demo
 
-🔗 Visit MediConnect (Deployed on Vercel)💻 GitHub Repository
+**[Live Website](https://your-deployment-link.vercel.app)**  
+*(Replace with actual URL if public)*
 
-✨ Features
+## 🚀 Features
 
-🔍 Doctor Discovery – Patients can explore doctors by specialization, location, or availability.
+- **Doctor Discovery:** Patients can explore doctors by medical specialization and view detailed profiles.
+- **Appointment Booking:** Users can book consultations with available doctors.
+- **Email Confirmation:** Automated email confirmations for scheduled appointments.
+- **Authentication:** Secure login/signup using Clerk for both doctors and patients.
+- **Video Consultations:** Real-time video calls using Vonage with media device checks.
+- **Dynamic Controls:** Doctors and patients have access to mic/camera toggles during video calls.
+- **Admin Panel (Optional):** Scalable to include a clinic admin dashboard.
 
-🗕️ Appointment Booking – Schedule consultations in real-time with available doctors.
+## 🛠 Tech Stack
 
-📧 Email Confirmation – Automatically sends confirmation emails for successful bookings.
+- **Frontend:** Next.js 15, Tailwind CSS, Shadcn UI
+- **Backend:** Next.js App Router, Serverless Functions
+- **Database:** NeonDB with Prisma ORM
+- **Authentication:** Clerk
+- **Video Calling:** Vonage (OpenTok)
+- **Deployment:** Vercel
 
-🔐 Secure Authentication – Role-based access for patients and doctors using Clerk.
+## 🧠 How It Works
 
-🎥 Video Consultation – Integrated Vonage API for HD video calls with pre-call hardware checks.
+1. Patients sign up and browse doctors by specialization.
+2. Users book a consultation by selecting a date & time.
+3. A confirmation email is sent with appointment details.
+4. At the scheduled time, both join a secure video call via Vonage.
+5. Video session includes dynamic controls and automatic session management.
 
-📱 Responsive UI – Optimized for all screen sizes using Tailwind and Shadcn UI components.
+## 📦 Installation
 
-🧹 Serverless & Scalable – Built with Next.js 15 and NeonDB to ensure modern scalability and performance.
-
-🧠 How It Works
-
-Patients sign up and browse doctors by specialization.
-
-Doctors register and manage their availability and consultations.
-
-Appointments are booked with automatic confirmation and reminders.
-
-Video Calls happen securely using Vonage, with stream controls and diagnostics.
-
-🛠️ Tech Stack
-
-Frontend
-
-Backend
-
-Auth & DB
-
-Realtime Video
-
-Next.js 15
-
-Next.js API Routes
-
-Clerk (Auth)
-
-Vonage Video API
-
-React 19
-
-Prisma ORM
-
-NeonDB (PostgreSQL)
-
-Vonage RTC SDK
-
-Tailwind CSS
-
-Serverless
-
-
-
-
-
-Shadcn/UI
-
-
-
-
-
-
-
-📁 Folder Structure
-
-mediaconnect/
-├── app/                 # Next.js app directory
-├── components/          # Reusable UI components (shadcn, UI cards, forms)
-├── lib/                 # Utility functions and API logic
-├── prisma/              # Prisma schema and DB client
-├── public/              # Static assets
-├── styles/              # Tailwind and custom CSS
-├── pages/               # API routes and dynamic pages
-├── hooks/               # Custom React hooks
-├── env.local            # Environment variables
-└── README.md
-
-🧪 Local Setup
-
-Clone the repo
-
-git clone https://github.com/poojakumari27/mediaconnect.git
+```bash
+git clone https://github.com/yourusername/mediaconnect.git
 cd mediaconnect
-
-Install dependencies
-
 npm install
-
-Set up environment variablesCreate a .env.local file:
-
-DATABASE_URL=your-neon-db-url
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-pk
-CLERK_SECRET_KEY=your-clerk-secret
-VONAGE_API_KEY=your-vonage-key
-VONAGE_API_SECRET=your-vonage-secret
-
-Run locally
-
 npx prisma generate
-npx prisma db push
 npm run dev
+```
 
-📄 License
+Ensure environment variables are configured (e.g. for Clerk, NeonDB, Vonage).
 
-This project is licensed under the MIT License – feel free to fork and build on top of it!
+## 📁 Folder Structure
 
-👩‍💻 Developed By
- Pooja Kumari
+- `/app`: Next.js app directory with routing and components
+- `/components`: Reusable UI elements using Shadcn
+- `/lib`: Utility functions and Prisma client
+- `/pages/api`: Serverless functions for backend logic
 
+## 📝 License
+
+MIT License  
+© 2025 Pooja Kumari
