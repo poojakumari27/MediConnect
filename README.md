@@ -2,9 +2,8 @@
 
 MediConnect is a full-stack medical appointment platform designed to streamline the process of discovering doctors by specialization, booking consultations, and conducting video calls with real-time support and email notifications.
 
-## 🔗 Live Demo
-
-**[Live Website](https://medi-connect-eta.vercel.app/)**  
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://medi-connect-eta.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/poojakumari27/MediConnect)
 
 
 ## 🚀 Features
@@ -45,13 +44,6 @@ npm run dev
 ```
 
 Ensure environment variables are configured (e.g. for Clerk, NeonDB, Vonage).
-
-## 📁 Folder Structure
-
-- `/app`: Next.js app directory with routing and components
-- `/components`: Reusable UI elements using Shadcn
-- `/lib`: Utility functions and Prisma client
-- `/pages/api`: Serverless functions for backend logic
 
 ## 📝 License
 
