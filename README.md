@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🩺 MediConnect - Doctor Appointment Platform
 
-## Getting Started
+MediConnect is a full-stack medical appointment platform designed to streamline the process of discovering doctors by specialization, booking consultations, and conducting video calls with real-time support and email notifications.
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://medi-connect-eta.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/poojakumari27/MediConnect)
+
+
+## 🚀 Features
+
+- **Doctor Discovery:** Patients can explore doctors by medical specialization and view detailed profiles.
+- **Appointment Booking:** Users can book consultations with available doctors.
+- **Email Confirmation:** Automated email confirmations for scheduled appointments.
+- **Authentication:** Secure login/signup using Clerk for both doctors and patients.
+- **Video Consultations:** Real-time video calls using Vonage with media device checks.
+- **Dynamic Controls:** Doctors and patients have access to mic/camera toggles during video calls.
+- **Admin Panel (Optional):** Scalable to include a clinic admin dashboard.
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js 15, Tailwind CSS, Shadcn UI
+- **Backend:** Next.js App Router, Serverless Functions
+- **Database:** NeonDB with Prisma ORM
+- **Authentication:** Clerk
+- **Video Calling:** Vonage (OpenTok)
+- **Deployment:** Vercel
+
+## 🧠 How It Works
+
+1. Patients sign up and browse doctors by specialization.
+2. Users book a consultation by selecting a date & time.
+3. A confirmation email is sent with appointment details.
+4. At the scheduled time, both join a secure video call via Vonage.
+5. Video session includes dynamic controls and automatic session management.
+
+## 📦 Installation
 
 ```bash
+git clone https://github.com/yourusername/mediaconnect.git
+cd mediaconnect
+npm install
+npx prisma generate
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure environment variables are configured (e.g. for Clerk, NeonDB, Vonage).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📝 License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License  
+© 2025 Pooja Kumari
