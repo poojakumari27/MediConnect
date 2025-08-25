@@ -54,7 +54,7 @@ export default async function PatientAppointmentsPage() {
               </h3>
               <p className="text-muted-foreground">
                 You don&apos;t have any appointments scheduled yet. Browse our
-                doctors and book your first consultation.
+                doctors and book your first consultation. and  talk to a doctor today!
               </p>
             </div>
           )}
