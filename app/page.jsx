@@ -31,20 +31,9 @@ export default function Home() {
               <p className="text-muted-foreground text-lg md:text-xl max-w-md">
                 Skip the waiting room — book appointments, talk to doctors face‑to‑face online, and keep track of your health, all from one secure, easy‑to‑use app.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-                  <Link href="/onboarding">
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-
-                <Button asChild size="lg" variant="outline" className="border-blue-700/30 hover:bg-muted/80">
-                  <Link href="/doctors">
-                    Find Doctors <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
+<p className="text-gray-400 text-lg">
+  Sign in to get started and access all features of the app.
+</p>
             </div>
 
             <div className="relative w-full max-w-md lg:max-w-lg mx-auto h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-xl">
